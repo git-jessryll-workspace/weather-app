@@ -7,25 +7,40 @@ let weather_data = window.localStorage.getItem("weather_data");
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherDataInterface | null>();
-  const [type, setType] = useState<string>("f");
+  const [type, setType] = useState<string>("c");
   const fetchData = useRef<boolean>();
 
   useEffect(() => {
     if (fetchData.current === true) return;
 
     fetchData.current = true;
-    if (weather_data) {
-      setWeatherData(JSON.parse(weather_data));
-      return;
-    }
 
-    RestAPI.getWeather("Talomo, Davao City").then((response: any) => {
+    // let current_hour: number = new Date().getHours();
+    
+    // let saved_local_hour:string|null = window.localStorage.getItem('saved_local_hour');
+
+    // if (!saved_local_hour) {
+    //   saved_local_hour = current_hour.toString();
+    //   window.localStorage.setItem('saved_local_hour', saved_local_hour);
+    // }
+    
+    // if (current_hour > parseInt(saved_local_hour)) {
+    //   window.localStorage.clear();
+    // }
+    
+    // if (weather_data) {
+    //   setWeatherData(JSON.parse(weather_data));
+    //   return;
+    // }
+
+    RestAPI.getWeather("Catalunan Pequeño").then((response: any) => {
       window.localStorage.setItem(
         "weather_data",
         JSON.stringify(response.data)
       );
       setWeatherData(response.data);
     });
+
   }, []);
 
   console.log(weatherData);

@@ -13,7 +13,7 @@ export default function ForecastHourItemComponent(props: {
   } = props;
 
   return (
-    <div className="w-[15%] m-3">
+    <div className="w-[18%] m-2 pl-5">
       <div className="flex items-center space-x-1">
         <div>
           <img src={`https:${icon}`} />
@@ -31,7 +31,7 @@ export default function ForecastHourItemComponent(props: {
           </div>
         </div>
       </div>
-      <div className="text-sm text-gray-500">{text}</div>
+      <div className="text-sm text-gray-500 text-center">{text}</div>
     </div>
   );
 }
