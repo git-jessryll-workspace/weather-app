@@ -3,7 +3,7 @@ import RestAPI from "./api/index";
 import CurrentComponent from "./components/CurrentComponent";
 import ForecastHourListComponent from "./components/ForecastHourListComponent";
 
-let weather_data = window.localStorage.getItem("weather_data");
+// let weather_data = window.localStorage.getItem("weather_data");
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherDataInterface | null>();
