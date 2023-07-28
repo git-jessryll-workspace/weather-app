@@ -34,7 +34,9 @@ function App() {
     }
 
     if (weather_data) {
-      setWeatherData(pre_data);
+      setTimeout(() => {
+        setWeatherData(pre_data);
+      }, 1000)
       return;
     }
 
