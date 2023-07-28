@@ -4,6 +4,7 @@ import CurrentComponent from "./components/CurrentComponent";
 import ForecastHourListComponent from "./components/ForecastHourListComponent";
 import CloudyDayImage from "./assets/cloudy-day.png";
 import WeatherLoading from "./assets/animation_loading.gif"
+import { WeatherDataInterface } from "./types/weather-api-types";
 
 const weather_data = window.localStorage.getItem("weather_data");
 
@@ -66,16 +67,16 @@ function App() {
   }
   return (
     <div className="flex justify-center">
-      <div className="space-y-3 mt-10 w-[80%]">
+      <div className="space-y-3 mt-2 lg:mt-10 w-[95%] md:w-[80%]">
         <div className="flex items-center space-x-3">
           <div>
             <img src={CloudyDayImage} className="h-10 w-10" />
           </div>
           <h3 className="text-2xl font-bold antialiased text-gray-500">
-            Weather App
+            Weather
           </h3>
         </div>
-        <div className="flex items-center pb-6">
+        <div className="flex items-center pb-0 md:pb-6">
           <CurrentComponent
             current={weatherData.current}
             location={weatherData.location}

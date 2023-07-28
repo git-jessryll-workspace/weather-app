@@ -1,3 +1,4 @@
+import { ForecastDayObject, ForecastObject, HourObject } from "../types/weather-api-types";
 import ForecastHourItemComponent from "./ForecastHourItemComponent";
 
 export default function ForecastHourListComponent(props: {
@@ -13,11 +14,8 @@ export default function ForecastHourListComponent(props: {
   return (
     <div className="space-y-3">
       {forecastday.map((forecastItem: ForecastDayObject) => (
-        <div key={forecastItem.date_epoch} className="border border-gray-100 p-4 shadow-lg rounded-lg">
-          <div>
-            <h1 className="text-2xl font-bold antialiased text-gray-700">Today</h1>
-          </div>
-          <div className="flex justify-between">
+        <div key={forecastItem.date_epoch} className="md:border md:border-gray-200 p-4 md:shadow-lg rounded-lg">
+          <div className="flex flex-col md:flex-row justify-between pt-4 px-0 md:px-6">
             <div className="flex flex-col">
               <div className="text-gray-500 text-xl">
                 {forecastItem.astro.moon_phase}
@@ -37,7 +35,7 @@ export default function ForecastHourListComponent(props: {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap mt-10 pb-10 divide-x-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap mt-10 pb-10">
             {forecastItem.hour
               .filter(filterTimeInterval)
               .map((hourItem: HourObject) => (

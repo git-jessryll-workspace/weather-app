@@ -1,10 +1,10 @@
-interface WeatherDataInterface {
+export interface WeatherDataInterface {
   current: CurrentWeather;
   forecast: ForecastObject;
   location: LocationObject;
 }
 
-interface CurrentWeather {
+export interface CurrentWeather {
   cloud: number;
   condition: ConditionObject;
   feelslike_c: number;
@@ -30,17 +30,17 @@ interface CurrentWeather {
   wind_mph: number;
 }
 
-interface ConditionObject {
+export interface ConditionObject {
   text: string;
   icon: string;
   code: number;
 }
 
-interface ForecastObject {
+export interface ForecastObject {
   forecastday: [ForecastDayObject];
 }
 
-interface ForecastDayObject {
+export interface ForecastDayObject {
   date: string;
   date_epoch: number;
   astro: DayAstroObject;
@@ -48,7 +48,7 @@ interface ForecastDayObject {
   hour: [HourObject];
 }
 
-interface DayObject {
+export interface DayObject {
   astro: DayAstroObject;
   avghumidity: number;
   avgtemp_c: number;
@@ -72,7 +72,7 @@ interface DayObject {
   uv: number;
 }
 
-interface DayAstroObject {
+export interface DayAstroObject {
   is_moon_up: number;
   is_sun_up: number;
   moon_illumination: string;
@@ -83,7 +83,7 @@ interface DayAstroObject {
   sunset: string;
 }
 
-interface HourObject {
+export interface HourObject {
   chance_of_rain: number;
   chance_of_snow: number;
   cloud: number;
@@ -119,7 +119,7 @@ interface HourObject {
   windchill_f: number;
 }
 
-interface LocationObject {
+export interface LocationObject {
   country: string;
   lat: number;
   localtime: string;
