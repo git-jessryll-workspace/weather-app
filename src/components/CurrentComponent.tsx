@@ -27,7 +27,7 @@ export default function CurrentComponent(props: {
   const changeType = (val: string) => setType(val);
 
   return (
-    <div className="border-transparent lg:border lg:shadow-lg border-gray-200 p-3 rounded-lg w-full">
+    <div className="border-transparent lg:border lg:shadow-lg border-gray-300 p-3 rounded-lg w-full">
       <div className="pl-0 lg:pl-2">
           <h1 className="text-base uppercase font-bold antialiased text-gray-500">Today</h1>
         </div>

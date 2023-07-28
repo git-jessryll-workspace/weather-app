@@ -14,7 +14,7 @@ export default function ForecastHourListComponent(props: {
   return (
     <div className="space-y-3">
       {forecastday.map((forecastItem: ForecastDayObject) => (
-        <div key={forecastItem.date_epoch} className="md:border md:border-gray-200 p-4 md:shadow-lg rounded-lg">
+        <div key={forecastItem.date_epoch} className="md:border md:border-gray-300 p-4 md:shadow-lg rounded-lg">
           <div className="flex flex-col md:flex-row justify-between pt-4 px-0 md:px-6">
             <div className="flex flex-col">
               <div className="text-gray-500 text-xl">
